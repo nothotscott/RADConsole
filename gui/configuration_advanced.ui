@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Advanced Configuration</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>9</number>
+    </property>
+    <property name="topMargin">
+     <number>9</number>
+    </property>
+    <property name="rightMargin">
+     <number>9</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QTreeWidget" name="config_tree">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QTableWidget" name="config_table"/>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDialogButtonBox" name="dialog_buttons">
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
+      <property name="centerButtons">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="actionSave_Object"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionAdd_Object"/>
+    <addaction name="actionRemove_Object"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionExpand"/>
+    <addaction name="actionCollapse"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionGenerate"/>
+    <addaction name="actionReset"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuTools"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionAdd_Object"/>
+   <addaction name="actionRemove_Object"/>
+  </widget>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>resources/document-save.png</normaloff>resources/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="icon">
+    <iconset>
+     <normaloff>resources/document-save-as.png</normaloff>resources/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset>
+     <normaloff>resources/document-open.png</normaloff>resources/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionAdd_Object">
+   <property name="icon">
+    <iconset>
+     <normaloff>resources/list-add.png</normaloff>resources/list-add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Object</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Object</string>
+   </property>
+  </action>
+  <action name="actionRemove_Object">
+   <property name="icon">
+    <iconset>
+     <normaloff>resources/list-remove.png</normaloff>resources/list-remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove Object</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove Object</string>
+   </property>
+  </action>
+  <action name="actionSave_Object">
+   <property name="icon">
+    <iconset>
+     <normaloff>resources/text-x-generic-template.png</normaloff>resources/text-x-generic-template.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Selected Object</string>
+   </property>
+   <property name="toolTip">
+    <string>Save Object</string>
+   </property>
+  </action>
+  <action name="actionExpand">
+   <property name="text">
+    <string>Expand Selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Expand Selection and Children</string>
+   </property>
+  </action>
+  <action name="actionCollapse">
+   <property name="text">
+    <string>Collapse Selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Collapse Selection and Children</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+   <property name="toolTip">
+    <string>Reset entire configuration</string>
+   </property>
+  </action>
+  <action name="actionGenerate">
+   <property name="text">
+    <string>Generate</string>
+   </property>
+   <property name="toolTip">
+    <string>Generate configuration</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object label="Plugin tester" description="A simple test plugin" enabled="true" auto_run="false">
+	<float name="wait_time" label="Wait time">5.0</float>
+	<string name="hold_on_msg" label="Hold on message">The test has not finished yet!</string>
+	<string name="test_complete_msg" label="Test complete message">The test completed successfully</string>
+	
+	<object name="tests" label="Tests">
+		<string name="test_string1" label="This is a changable string">Change this string</string>
+		<string name="test_string2" label="Implicit string" presentation="implicit">Hidden string</string>
+		<string name="test_string3" label="A Null string">null</string>
+		<int name="test_int" label="This is a changable int" min="0" max="100"/>
+		<bool name="test_bool" label="This is a changable bool">true</bool>
+		<float name="test_float" label="This is a changable float" unit="radians">3.14</float>
+		<file name="test_file" label="Pick a file" />
+		<directory name="test_dir" label="Pick a folder"/>
+		<array name="things" label="This will be built upon" copies="2">
+			<object name="thing1" label="Thing1">
+				<string name="name1" label="Name1">Thingy</string>
+				<string name="description1" label="Description1">Something that demonstrates the building of objects in array structures</string>
+			</object>
+			<object name="thing2" label="Thing2">
+				<string name="name2" label="Name2">Thingy</string>
+				<string name="description2" label="Description2">Something that demonstrates the building of other objects in array structures</string>
+				<int name="number2" label="Number2"/>
+			</object>
+		</array>
+	</object>
+</object>

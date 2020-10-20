@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object label="OP25 Receiver" description="Receives and trunks P25 using OP25" enabled="true" auto_run="true">
+	<directory name="gr_op25_repeater_apps_dir" label="Location of `op25/gr-op25_repeater/apps` directory">~/op25/op25/gr-op25_repeater/apps</directory>
+	
+	<array name="devices" label="Devices" copies="1">
+		<object name="device" label="Device">
+			<string name="name" label="Name">Device1</string>
+			<string name="osmosdr" label="Osmosdr source device">rtl=0</string>
+			<bool name="tunable" label="Tunable">true</bool>
+			<int name="sample_rate" label="Source sample rate" options="250000,1000000,1024000,1800000,1920000,2000000,2048000,2400000,2560000">1000000</int>
+			<float name="ppm" label="Frequency correction" unit="ppm">0</float>
+			
+			<bool name="gain_mode" label="Auto gain control" presentation="implicit" />
+			<int name="frequency" label="Initial center frequency" unit="hz" presentation="implicit"/>
+			<float name="offset" label="Tuning offset frequency (to circumvent DC offset)" presentation="implicit"/>
+			
+			<!-- <string name="audio_output" label="Audio output device">default</string>
+			<bool name="phase2_tdma" label="Enable phase2 tdma">false</bool>
+			<string name="antenna" label="Antenna for the SDR" presentation="implicit">null</string>
+			<float name="fine_tune" label="Fine tune" unit="hz" presentation="implicit"/>
+			<float name="gain_mu" label="Gardner gain" presentation="implicit">0.025</float>
+			<float name="costas_alpha" label="Costas loop alpha" unit="hz" presentation="implicit">0.04</float>
+			<bool name="vocoder" label="Enable vocoder" presentation="implicit">True</bool>
+			<bool name="nocrypt" label="Enable encryption silencer" presentation="implicit">True</bool> -->
+			
+			<object name="gains" label="Gains">
+				<float name="lna" label="LNA">39</float>
+				<float name="if" label="IF" presentation="implicit"/>
+				<float name="mix" label="MIX" presentation="implicit"/>
+			</object>
+		</object>
+	</array>
+	
+	<array name="channels" label="Channels">
+		<object name="channel" label="Channel">
+			<string name="name" label="Name">Channel1</string>
+			<string name="control_channel_list" label="Control channels"/>
+			<string name="demod_type" label="Demodulation type" options="cqpsk,fsk4,fsk">cqpsk</string>
+			<string name="filter_type" label="Filter type" options="rc,rrc,fgmsk,fsk2,fsk2mm,widepulse">rc</string>
+			<bool name="enable_analog" label="Enable auto-analog">true</bool>
+			
+			<string name="dev_pref" label="Preferential device" presentation="implicit"/>
+			<float name="audio_gain" label="Audio output gain" unit="db" presentation="implicit">1.0</float>
+			<bool name="dual_channel" label="Two output channels" presentation="implicit">true</bool>
+			<int name="symbol_rate" label="Symbol rate" presentation="implicit">4800</int>
+			<int name="if_rate" label="IF Rate" presentation="implicit">24000</int>
+			<float name="excess_bw" label="Excess bandwidth" unit="hz" presentation="implicit">0.2</float>
+		</object>
+	</array>
+</object>

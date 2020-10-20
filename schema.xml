@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object label="RADConsole Configuration">
+	<bool name="bluetooth_enabled" label="Bluetooth enabled">true</bool>
+</object>
